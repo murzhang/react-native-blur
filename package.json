@@ -1,0 +1,90 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "react-native-blur@git+https://github.com/react-native-community/react-native-blur.git",
+        "scope": null,
+        "escapedName": "react-native-blur",
+        "name": "react-native-blur",
+        "rawSpec": "git+https://github.com/react-native-community/react-native-blur.git",
+        "spec": "git+https://github.com/react-native-community/react-native-blur.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:react-native-community/react-native-blur.git",
+          "sshUrl": "git+ssh://git@github.com/react-native-community/react-native-blur.git",
+          "httpsUrl": "git+https://github.com/react-native-community/react-native-blur.git",
+          "gitUrl": "git://github.com/react-native-community/react-native-blur.git",
+          "shortcut": "github:react-native-community/react-native-blur",
+          "directUrl": "https://raw.githubusercontent.com/react-native-community/react-native-blur/master/package.json"
+        }
+      },
+      "d:\\USEABCV2\\SourceCode\\YSApp"
+    ]
+  ],
+  "_from": "git+https://github.com/react-native-community/react-native-blur.git",
+  "_id": "react-native-blur@3.1.2",
+  "_inCache": true,
+  "_location": "/react-native-blur",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "react-native-blur@git+https://github.com/react-native-community/react-native-blur.git",
+    "scope": null,
+    "escapedName": "react-native-blur",
+    "name": "react-native-blur",
+    "rawSpec": "git+https://github.com/react-native-community/react-native-blur.git",
+    "spec": "git+https://github.com/react-native-community/react-native-blur.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:react-native-community/react-native-blur.git",
+      "sshUrl": "git+ssh://git@github.com/react-native-community/react-native-blur.git",
+      "httpsUrl": "git+https://github.com/react-native-community/react-native-blur.git",
+      "gitUrl": "git://github.com/react-native-community/react-native-blur.git",
+      "shortcut": "github:react-native-community/react-native-blur",
+      "directUrl": "https://raw.githubusercontent.com/react-native-community/react-native-blur/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git+https://github.com/react-native-community/react-native-blur.git#b6b50ce3c3dddb5eb3c6ab74a14aea6e6628ecbc",
+  "_shasum": "00c87c7ed5546bdcaef1e20237c3fd7dfc31e2ee",
+  "_shrinkwrap": null,
+  "_spec": "react-native-blur@git+https://github.com/react-native-community/react-native-blur.git",
+  "_where": "d:\\USEABCV2\\SourceCode\\YSApp",
+  "author": {
+    "name": "Alexey Kureev",
+    "email": "kureev-mail@ya.ru",
+    "url": "https://github.com/Kureev"
+  },
+  "bugs": {
+    "url": "https://github.com/react-native-community/react-native-blur/issues"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.10"
+  },
+  "description": "React Native Blur component",
+  "devDependencies": {},
+  "gitHead": "b6b50ce3c3dddb5eb3c6ab74a14aea6e6628ecbc",
+  "homepage": "https://github.com/react-native-community/react-native-blur",
+  "keywords": [
+    "react-native",
+    "ios",
+    "react-component"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "react-native-blur",
+  "optionalDependencies": {},
+  "readme": "[![npm version](https://badge.fury.io/js/react-native-blur.svg)](https://badge.fury.io/js/react-native-blur)\r\n\r\n### React Native Blur\r\n\r\nA component for UIVisualEffectView's blur and vibrancy effect on iOS, and [500px-android-blur](https://github.com/500px/500px-android-blur) on Android.<br>\r\n\r\n<img src='https://cloud.githubusercontent.com/assets/139536/25066337/3c9d44c0-224d-11e7-8ca6-028478bf4a7d.gif' />\r\n\r\n\r\n### Content\r\n\r\n- [Installation](#installation)\r\n- [BlurView](#blurview)\r\n- [VibrancyView](#vibrancyview)\r\n- [Example React Native app](#example-react-native-app)\r\n- [Questions?](#questions)\r\n\r\n\r\n### Installation\r\n\r\n**NOTE:** Latest version of the package is available in npm as `react-native-blur@3.0.0-alpha`\r\n\r\n1. Install package via npm:\r\n\r\n  ```\r\n  npm install react-native-blur\r\n  ```\r\n\r\n2. Link your native dependencies:\r\n  ```\r\n  react-native link react-native-blur\r\n  ```\r\n\r\n3. (Android only) Add the following to `android/app/build.gradle`\r\n\r\n```\r\nandroid {\r\n    // ...\r\n    defaultConfig {\r\n        // Add these lines below the existing config\r\n        renderscriptTargetApi 23\r\n        renderscriptSupportModeEnabled true\r\n    }\r\n}\r\n```\r\n\r\n4. Include the library in your code:\r\n\r\n  ```javascript\r\n  import { BlurView, VibrancyView } from 'react-native-blur';\r\n\r\n  // OR\r\n\r\n  const { BlurView, VibrancyView } = require('react-native-blur');\r\n  ```\r\n\r\n5. Compile and have fun!\r\n\r\n\r\n### BlurView\r\n\r\n**Properties:**\r\n\r\n- `blurType` (String)\r\n  - `xlight` - extra light blur type\r\n  - `light` - light blur type\r\n  - `dark` - dark blur type\r\n  - `extraDark` - extra dark blur type (tvOS only)\r\n  - `regular` - regular blur type (tvOS only)\r\n  - `prominent` - prominent blur type (tvOS only)\r\n- `blurAmount` (Default: 10, Number)\r\n  - `0-100` - Adjusts blur intensity\r\n\r\n> Note: The maximum `blurAmount` on Android is 32, so higher values will be clamped to 32.\r\n\r\n> Complete usage example that works on iOS and Android:\r\n\r\n```javascript\r\nimport React, { Component } from 'react';\r\nimport { View, Image, Text, findNodeHandle, StyleSheet } from 'react-native';\r\nimport { BlurView } from 'react-native-blur';\r\n\r\nexport default class Menu extends Component {\r\n  constructor(props) {\r\n    super(props);\r\n    this.state = { viewRef: null };\r\n  }\r\n\r\n  imageLoaded() {\r\n    this.setState({ viewRef: findNodeHandle(this.backgroundImage) });\r\n  }\r\n\r\n  render() {\r\n    return (\r\n      <View style={styles.container}>\r\n        <Image\r\n          ref={(img) => { this.backgroundImage = img; }}\r\n          source={{uri}}\r\n          style={styles.absolute}\r\n          onLoadEnd={this.imageLoaded.bind(this)}\r\n        />\r\n        <BlurView\r\n          style={styles.absolute}\r\n          viewRef={this.state.viewRef}\r\n          blurType=\"light\"\r\n          blurAmount={10}\r\n        />\r\n        <Text>Hi, I am some unblurred text</Text>\r\n      </View>\r\n    );\r\n  }\r\n}\r\n\r\nconst styles = StyleSheet.create({\r\n  container: {\r\n    justifyContent: 'center',\r\n    alignItems: 'center',\r\n  },\r\n  absolute: {\r\n    position: \"absolute\",\r\n    top: 0, left: 0, bottom: 0, right: 0,\r\n  },\r\n});\r\n```\r\n\r\nIn this example, the `Image` component will be blurred, because the `BlurView` in positioned on top. But the `Text` will stay unblurred.\r\n\r\nNote that `viewRef` is only required if you need to support Android. See the [Android section](#android) for more details.\r\n\r\n### VibrancyView\r\n\r\n**Uses the same properties as `BlurView` (`blurType` and `blurAmount`).**\r\n\r\n> The vibrancy effect lets the content underneath a blurred view show through more vibrantly\r\n\r\n> (Note: `VibrancyView` is only supported on iOS. Also note that the `VibrancyView` must contain nested views.)\r\n\r\n```javascript\r\nimport { VibrancyView } from 'react-native-blur';\r\n\r\nexport default class Menu extends Component {\r\n  render() {\r\n    return (\r\n      <Image source={{uri}} style={styles.absolute}>\r\n        <VibrancyView blurType=\"light\" style={styles.flex}>\r\n          <Text>Hi, I am some vibrant text.</Text>\r\n        </VibrancyView>\r\n      </Image>\r\n    );\r\n  }\r\n}\r\n```\r\n\r\n### Android\r\n\r\nAndroid uses the [500px-android-blur](https://github.com/500px/500px-android-blur) library, which works by blurring a referenced view. This means that you must wait until the view you want to blur is rendered. You then use `findNodeHandle` to get a reference to that view, and pass that reference to the `BlurView` as the `viewRef` prop. Take a look at [the BlurView example](#blurview) to see how it works.\r\n\r\nThe Android library introduces some limitations:\r\n\r\n* `BlurView` cannot be a child of the view that is being blurred (this would cause an infinite loop)\r\n* `BlurView` cannot contain any child components.\r\n\r\nIf you only need to support iOS, then you can safely ignore these limitations.\r\n\r\nIn addition to `blurType` and `blurAmount`, Android has some extra props that can be used to override the default behavior (or configure Android-specific behavior):\r\n\r\n- `blurRadius`       (Number - between 0 and 25) - Manually adjust the blur radius. (Default: matches iOS blurAmount)\r\n- `downsampleFactor` (Number - between 0 and 25) - Scales down the image before blurring (Default: matches iOS blurAmount)\r\n- `overlayColor`     (Color) - Set a custom overlay color (Default color based on iOS blurType)\r\n\r\n\r\n### Example React Native App\r\n\r\nThis project includes an example React Native app, which was used to make the GIF in this README.\r\nYou can run the apps by following these steps:\r\n\r\n1. Clone the repository\r\n\r\n```\r\ncd ~\r\ngit clone https://github.com/react-native-community/react-native-blur.git\r\n```\r\n\r\n2. cd to `examples/Basic`\r\n\r\n```\r\ncd react-native-blur/examples/Basic\r\n```\r\n\r\n3. Install dependencies\r\n\r\n```\r\nnpm install\r\n```\r\n\r\n4. Run the apps:\r\n\r\n#### Run the iOS app\r\n\r\n```\r\nreact-native run-ios\r\n```\r\n\r\n#### Run the tvOS app\r\n\r\ntype:\r\n```\r\nreact-native run-ios\r\n```\r\n\r\n`react-native link` don’t works properly with the tvOS target so we need to add the library manually.\r\n\r\nFirst select your project in Xcode.\r\n\r\n<img src=\"./docs/tvOS-step-1.jpg\" width=\"40%\">\r\n\r\nAfter that, select the tvOS target of your application and select « General » tab\r\n\r\n<img src=\"./docs/tvOS-step-2.jpg\" width=\"40%\">\r\n\r\nScroll to « Linked Frameworks and Libraries » and tap on the + button\r\n\r\n<img src=\"./docs/tvOS-step-3.jpg\" width=\"40%\">\r\n\r\nSelect RNBlur-tvOS\r\n\r\n<img src=\"./docs/tvOS-step-4.jpg\" width=\"40%\">\r\n\r\nThat’s all, you can use react-native-blur for your tvOS application\r\n\r\n#### Run the Android app\r\n\r\n```\r\nreact-native run-android\r\n```\r\n\r\n\r\n### Troubleshooting\r\n\r\nOn older instances of react-native, BlurView package does not get added into the MainActivity/MainApplication classes where you would see `Warning: Native component for 'BlurView' does not exist` in RN YellowBox or console.\r\n\r\nTo rectify this, you can add the BlurViewPackage manually in MainActivity/MainApplication classes\r\n```java\r\n...\r\nimport com.cmcewen.blurview.BlurViewPackage;\r\n...\r\n\r\npublic class MainApplication extends Application implements ReactApplication {\r\n...\r\n    @Override\r\n    protected List<ReactPackage> getPackages() {\r\n      return Arrays.<ReactPackage>asList(\r\n          new MainReactPackage(),\r\n          new BlurViewPackage()\r\n      );\r\n    }\r\n...\r\n}\r\n```\r\n\r\n\r\n### Questions?\r\n\r\nFeel free to contact me in [twitter](https://twitter.com/kureevalexey) or [create an issue](https://github.com/Kureev/react-native-blur/issues/new)\r\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/react-native-community/react-native-blur.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "3.1.2"
+}
